@@ -7,13 +7,13 @@ To ensure security, a valid passphrase must contain no duplicate words.
 
 For example:
 
-    aa bb cc dd ee is valid.
-    aa bb cc dd aa is not valid - the word aa appears more than once.
-    aa bb cc dd aaa is valid - aa and aaa count as different words.
+aa bb cc dd ee is valid.
+aa bb cc dd aa is not valid - the word aa appears more than once.
+aa bb cc dd aaa is valid - aa and aaa count as different words.
 
 The system's full passphrase list is available as your puzzle input. How many passphrases are valid?
 
-*/
+ */
 
 $checksum = 'bdwdjjo avricm cjbmj ran lmfsom ivsof
 mxonybc fndyzzi gmdp gdfyoi inrvhr kpuueel wdpga vkq
@@ -528,10 +528,10 @@ gyw xzgbi efus uuy
 hwcy ujdun bjjuvd jbdvju onnk xeyy mmp onkn qyzl
 jwfm ptjwrbl hhuv uolz adyweh qpj wxyogp igvnojq jmfw pqs fsnirby';
 
-
 $lines = explode("\n", $checksum);
 
-function has_dupes($array) {
+function has_dupes($array)
+{
     $dupe_array = array();
     foreach ($array as $val) {
         if (++$dupe_array[$val] > 1) {
@@ -541,22 +541,26 @@ function has_dupes($array) {
     return false;
 }
 //bdwdjjo avricm cjbmj ran lmfsom ivsof
-for($i=0; $i<sizeof($lines); $i++){
+for ($i = 0; $i < sizeof($lines); $i++) {
     $eachLine = null;
     $eachLine = explode(' ', $lines[$i]);
-    $eachLine=array_map('trim',$eachLine);
+    $eachLine = array_map('trim', $eachLine);
     $newWords = null;
-    for($z = 0; $z<sizeof($eachLine); $z++){
+    for ($z = 0; $z < sizeof($eachLine); $z++) {
         $eachWord = str_split($eachLine[$z]);
         sort($eachWord);
         $newWords[] = implode($eachWord);
     }
-    if(has_dupes($newWords) == true){
+    if (has_dupes($newWords) == true) {
         $bad++;
-        echo 'bad '; var_dump($newWords); echo '<br />';
-    }else{
+        echo 'bad ';
+        var_dump($newWords);
+        echo '<br />';
+    } else {
         $good++;
-        echo 'good '; var_dump($newWords); echo '<br />';
+        echo 'good ';
+        var_dump($newWords);
+        echo '<br />';
     }
 
 }

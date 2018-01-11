@@ -9,9 +9,9 @@ For example, given the following spreadsheet:
 7 5 3
 2 4 6 8
 
-    The first row's largest and smallest values are 9 and 1, and their difference is 8.
-    The second row's largest and smallest values are 7 and 3, and their difference is 4.
-    The third row's difference is 6.
+The first row's largest and smallest values are 9 and 1, and their difference is 8.
+The second row's largest and smallest values are 7 and 3, and their difference is 4.
+The third row's difference is 6.
 
 In this example, the spreadsheet's checksum would be 8 + 4 + 6 = 18.
 
@@ -32,7 +32,7 @@ $checksum = '4168,3925,858,2203,440,185,2886,160,1811,4272,4333,2180,174,157,361
 219,3933,6626,2137,3222,1637,5312,238,5895,222,154,6649,169,6438,3435,4183
 37,1069,166,1037,172,258,1071,90,497,1219,145,1206,143,153,1067,510';
 
-*/
+ */
 
 $checksum = '4168,3925,858,2203,440,185,2886,160,1811,4272,4333,2180,174,157,361,1555
 150,111,188,130,98,673,408,632,771,585,191,92,622,158,537,142
@@ -51,17 +51,17 @@ $checksum = '4168,3925,858,2203,440,185,2886,160,1811,4272,4333,2180,174,157,361
 219,3933,6626,2137,3222,1637,5312,238,5895,222,154,6649,169,6438,3435,4183
 37,1069,166,1037,172,258,1071,90,497,1219,145,1206,143,153,1067,510';
 
-
 $lines = explode("\n", $checksum);
 
-function fn(&$a){settype($a,"int");}
+function fn(&$a)
+{settype($a, "int");}
 
-for($i=0; $i<sizeof($lines); $i++){
-	$eachLine = null;
-	$eachLine = explode(',', $lines[$i]);
-	array_walk( $eachLine, 'fn' ); //come on php
-	$min = min($eachLine);
-	$max = max($eachLine);
-	$checksumvalue += ($max - $min);
+for ($i = 0; $i < sizeof($lines); $i++) {
+    $eachLine = null;
+    $eachLine = explode(',', $lines[$i]);
+    array_walk($eachLine, 'fn'); //come on php
+    $min = min($eachLine);
+    $max = max($eachLine);
+    $checksumvalue += ($max - $min);
 }
 echo $checksumvalue;

@@ -3,15 +3,15 @@
 /*
 Positive jumps ("forward") move downward; negative jumps move upward. For legibility in this example, these offset values will be written all on one line, with the current instruction marked in parentheses. The following steps would be taken before an exit is found:
 
-    (0) 3  0  1  -3  - before we have taken any steps.
-    (1) 3  0  1  -3  - jump with offset 0 (that is, don't jump at all). Fortunately, the instruction is then incremented to 1.
-     2 (3) 0  1  -3  - step forward because of the instruction we just modified. The first instruction is incremented again, now to 2.
-     2  4  0  1 (-3) - jump all the way to the end; leave a 4 behind.
-     2 (4) 0  1  -2  - go back to where we just were; increment -3 to -2.
-     2  5  0  1  -2  - jump 4 steps forward, escaping the maze.
+(0) 3  0  1  -3  - before we have taken any steps.
+(1) 3  0  1  -3  - jump with offset 0 (that is, don't jump at all). Fortunately, the instruction is then incremented to 1.
+2 (3) 0  1  -3  - step forward because of the instruction we just modified. The first instruction is incremented again, now to 2.
+2  4  0  1 (-3) - jump all the way to the end; leave a 4 behind.
+2 (4) 0  1  -2  - go back to where we just were; increment -3 to -2.
+2  5  0  1  -2  - jump 4 steps forward, escaping the maze.
 
 In this example, the exit is reached in 5 steps.
-*/
+ */
 
 $maze = '2
 2
@@ -1049,21 +1049,22 @@ $maze = '2
 -547
 -852';
 
-
 $maze = explode("\n", $maze);
-$maze=array_map('trim',$maze);
+$maze = array_map('trim', $maze);
 $maze = array_map('intval', $maze);
 
 $steps = 0;
-$i = 0;
-$pos = 0;
-while (1){ 
+$i     = 0;
+$pos   = 0;
+while (1) {
     //echo (int)$maze[$pos]. '<Br />';
     //var_dump($maze); echo ' '.$pos.' ' .sizeof($maze). '<br />';
     $posOld = $pos;
-    if($pos >= sizeof($maze)){echo 'out in '.$steps; break;}
+    if ($pos >= sizeof($maze)) {
+        echo 'out in ' . $steps;
+        break;}
     $steps++;
     $pos += $maze[$pos];
-    if($maze[$posOld] >= 3){ $maze[$posOld]--; }else{ $maze[$posOld]++; }
+    if ($maze[$posOld] >= 3) {$maze[$posOld]--;} else { $maze[$posOld]++;}
     //if($steps == 10){ echo 'too long '; break;}
 }

@@ -1,4 +1,4 @@
-<?php 
+<?php
 $tower = 'wdysq (135) -> sxldvex, wiasj
 vjwuuft (33) -> inuci, neddz, rwamq
 oislgqy (77)
@@ -1234,22 +1234,25 @@ cckrzh (6841) -> hdinwud, dqzkic, vrxkr';
 
 $lines = explode("\n", $tower);
 
-        //var_dump($eachLine); echo ' lines here <Br >'; 
+//var_dump($eachLine); echo ' lines here <Br >';
 
-for($i = 0; $i < sizeof($lines); $i++){
+for ($i = 0; $i < sizeof($lines); $i++) {
     $eachLine = explode('->', $lines[$i]);
-    $eachLine=array_map('trim',$eachLine);
-    if($eachLine[1] != null){
-        $cleanKey = strstr($eachLine[0], ' (', true);
-        $blocks = explode(',', $eachLine[1]);
-        $blocks=array_map('trim',$blocks);
+    $eachLine = array_map('trim', $eachLine);
+    if ($eachLine[1] != null) {
+        $cleanKey               = strstr($eachLine[0], ' (', true);
+        $blocks                 = explode(',', $eachLine[1]);
+        $blocks                 = array_map('trim', $blocks);
         $new_array[$cleanKey][] = $blocks;
     }
 }
-foreach($new_array as $key => $value){
-    foreach($value as $k => $v){
-        if($v) $final
+foreach ($new_array as $key => $value) {
+    foreach ($value as $k => $v) {
+        if ($v) {
+            $final
+        }
     }
+    echo '<pre>';
 }
-echo '<pre>';
+
 var_dump($new_array);
