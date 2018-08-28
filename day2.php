@@ -1,6 +1,7 @@
 <?php
 
 /*
+
 test4
 The spreadsheet consists of rows of apparently-random numbers. To make sure the recovery process is on the right track, they need you to calculate the spreadsheet's checksum. For each row, determine the difference between the largest value and the smallest value; the checksum is the sum of all of these differences.
 
@@ -32,6 +33,8 @@ $checksum = '4168,3925,858,2203,440,185,2886,160,1811,4272,4333,2180,174,157,361
 191,53,714,745,89,899,854,679,45,81,726,801,72,338,95,417
 219,3933,6626,2137,3222,1637,5312,238,5895,222,154,6649,169,6438,3435,4183
 37,1069,166,1037,172,258,1071,90,497,1219,145,1206,143,153,1067,510';
+
+
 
  */
 
