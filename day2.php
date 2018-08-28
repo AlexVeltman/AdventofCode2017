@@ -65,3 +65,4 @@ for ($i = 0; $i < sizeof($lines); $i++) {
     $checksumvalue += ($max - $min);
 }
 echo $checksumvalue;
+test
