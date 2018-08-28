@@ -12,7 +12,7 @@ Positive jumps ("forward") move downward; negative jumps move upward. For legibi
 
 In this example, the exit is reached in 5 steps.
  */
-
+//testing
 $maze = '2
 2
 0
